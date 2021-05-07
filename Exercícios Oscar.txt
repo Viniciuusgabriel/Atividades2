@@ -1,0 +1,27 @@
+
+1 - Quantas vezes Natalie Portman foi indicada ao Oscar?
+
+SELECT * FROM vencedoresdooscar Where Nominee = 'Natalie Portman'
+Natalie Portman foi indicada 2 vezes
+
+2 - Quantas ela ganhou?
+SELECT * FROM vencedoresdooscar Where Nominee = 'Natalie Portman' AND Won = 'YES'
+ela ganhou 1 vez
+
+3 - Amy Adams já ganhou algum Oscar?
+SELECT * FROM vencedoresdooscar Where Nominee = 'Amy Adams' AND Won = 'YES'
+Não Amy adams nunca ganhou 
+
+4 - Toy Story 3 ganhou Oscar em quais anos?
+SELECT * FROM vencedoresdooscar Where Nominee = 'Toy Story 3' AND  Won = 'YES'
+toy story3 ganhou nos anos de 2010
+
+
+
+5 - Quem tem mais Oscars: a categoria "Melhor Ator" ou "Melhor Filme"?
+SELECT COUNT(*) FROM `vencedoresdooscar` WHERE Category='Actor -- Leading Role' and Won='Yes';
+SELECT COUNT(*) FROM `vencedoresdooscar` WHERE Category='Best Picture' and Won='YES'
+melhor filme tem mais oscars com 83
+
+
+

@@ -1,0 +1,116 @@
+1) Qual o ID do pokemon Lucario?
+
+Lucario = 448
+SELECT * FROM `pokedex` WHERE nome = 'Lucario'
+
+
+
+2) Qual a média de altura dos pokemons que são lendarios?
+
+Média = 22.8116
+SELECT AVG (altura) FROM `pokedex` WHERE lendario
+
+
+
+3) Quais pokemons são mais pesados pela média: os dos tipos rock ou do tipo stell?
+
+Média = 960.8182
+SELECT AVG (peso) FROM `pokedex` WHERE tipo1 ='Rock' OR tipo2 = 'Rock';
+SELECT AVG (peso) FROM `pokedex` WHERE tipo1 ='steel' OR tipo2 = 'steel'
+
+
+
+4) Traduzir os tipos dos pokemons.
+
+UPDATE `pokedex` SET tipo1 = 'fogo' WHERE tipo1 = 'fire'
+UPDATE `pokedex` SET tipo1 = 'planta' WHERE tipo1 = 'grass'
+UPDATE `pokedex` SET tipo1 = 'água' WHERE tipo1 = 'water'
+UPDATE `pokedex` SET tipo1 = 'inseto' WHERE tipo1 = 'bug'
+UPDATE `pokedex` SET tipo1 = 'veneno' WHERE tipo1 = 'poison'
+UPDATE `pokedex` SET tipo1 = 'eletrico' WHERE tipo1 = 'electric'
+UPDATE `pokedex` SET tipo1 = 'terra' WHERE tipo1 = 'ground'
+UPDATE `pokedex` SET tipo1 = 'mágico' WHERE tipo1 = 'fairy'
+UPDATE `pokedex` SET tipo1 = 'luta' WHERE tipo1 = 'fighting'
+UPDATE `pokedex` SET tipo1 = 'psíquico' WHERE tipo1 ='psychic'
+UPDATE `pokedex` SET tipo1 = 'pedra' WHERE tipo1 = 'rock'
+UPDATE `pokedex` SET tipo1 = 'fantasma' WHERE tipo1 = 'ghost'
+UPDATE `pokedex` SET tipo1 = 'gelo' WHERE tipo1 = 'ice'
+UPDATE `pokedex` SET tipo1 = 'dragão' WHERE tipo1 = 'dragon'
+UPDATE `pokedex` SET tipo1 = 'sombrio' WHERE tipo1 = 'dark'
+UPDATE `pokedex` SET tipo1 = 'ferro' WHERE tipo1 = 'steel'
+UPDATE `pokedex` SET tipo1 = 'vôo' WHERE tipo1 = 'flying';
+
+
+
+UPDATE `pokedex` SET tipo2 = 'eletrico' WHERE tipo2 = 'electric'
+UPDATE `pokedex` SET tipo2 = 'veneno' WHERE tipo2 = 'poison'
+UPDATE `pokedex` SET tipo2 = 'sombrio' WHERE tipo2 = 'dark'
+UPDATE `pokedex` SET tipo2 = 'gelo' WHERE tipo2 = 'ice';
+UPDATE `pokedex` SET tipo2 = 'terra' WHERE tipo2 = 'ground';
+UPDATE `pokedex` SET tipo2 = 'mágico' WHERE tipo2 = 'fairy';
+UPDATE `pokedex` SET tipo2 = 'vôo' WHERE tipo2 = 'flying';
+UPDATE `pokedex` SET tipo2 = 'psíquico' WHERE tipo2 ='psychic'
+UPDATE `pokedex` SET tipo2 = 'água' WHERE tipo2 = 'water';
+UPDATE `pokedex` SET tipo2 = 'ferro' WHERE tipo2 = 'steel';
+UPDATE `pokedex` SET tipo2 = 'planta' WHERE tipo2 = 'grass';
+UPDATE `pokedex` SET tipo2 = 'pedra' WHERE tipo2 = 'rock';
+UPDATE `pokedex` SET tipo2 = 'luta' WHERE tipo2 = 'fighting';
+UPDATE `pokedex` SET tipo2 = 'fogo' WHERE tipo2 = 'fire';
+UPDATE `pokedex` SET tipo2 = 'fantasma' WHERE tipo2 = 'ghost';
+UPDATE `pokedex` SET tipo2 = 'dragão' WHERE tipo2 = 'dragon';
+UPDATE `pokedex` SET tipo2 = 'inseto' WHERE tipo2 = 'bug';
+
+
+
+5) Utilizando o site https://serebii.net/pokedex-swsh/ encontre os pokemon com os IDs 80, 122, 149 e insira-os na tabela.
+
+INSERT INTO pokedex(nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario)
+VALUES ('Slowbro',80,49,7,45,45,'psiquico','água',69,1,0)
+
+INSERT INTO pokedex (pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario)
+VALUES (802,'Mr.Mime',122,49,7,45,45,'psiquico','',69,1,0)
+
+INSERT INTO pokedex (pokedex_number,nome,attack,defesa,altura,hp,velocidade,tipo1,tipo2,peso,generation,lendario)
+VALUES (803,'Dragonite',149,49,7,45,45,'dragao','voador',69,1,0)
+
+
+
+
+
+6) Qual tipo de pokemon possui mais attack em média.
+
+O tipo que possui mais attack em média e o tipo luta com 103.3208
+
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'pedra' or tipo2 = 'pedra';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'fogo' or tipo2 = 'fogo';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'planta' or tipo2 = 'planta';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'água' or tipo2 = 'água';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'inseto' or tipo2 = 'inseto';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'veneno' or tipo2 = 'veneno';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'eletrico' or tipo2 = 'eletrico';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'terra' or tipo2 = 'terra';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'mágico' or tipo2 = 'mágico';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'luta' or tipo2 = 'luta';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'psíquico' or tipo2 = 'psíquico';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'fantasma' or tipo2 = 'fantasma';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'gelo' or tipo2 = 'gelo';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'dragão' or tipo2 = 'dragão';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'sombrio' or tipo2 = 'sombrio';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'ferro' or tipo2 = 'ferro';
+SELECT AVG (attack) from pokedex WHERE tipo1 = 'vôo' or tipo2 = 'vôo';
+
+
+7) Qual geração de pokemons é mais pesada, em média?
+
+A 3 geração e a mais pesada com 670.7778
+
+SELECT AVG (peso) from pokedex WHERE generation = 1;
+SELECT AVG (peso) from pokedex WHERE generation = 2;
+SELECT AVG (peso) from pokedex WHERE generation = 3;
+
+
+8) A geração três possui quantos pokemons?
+
+A geração 3 possui 135 pokemons 
+
+SELECT COUNT(*) FROM `pokedex` WHERE generation = '3'
